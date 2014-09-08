@@ -108,6 +108,12 @@ app.get('/pets', function(req, res){
   res.send(['tobi', 'loki', 'jane']);
 });
 
+app.get('/hal-pets', function(req, res){
+  res
+    .header('Content-Type', 'application/hal+json')
+    .send(['tobi', 'loki', 'jane']);
+});
+
 app.get('/text', function(req, res){
   res.send("just some text");
 });

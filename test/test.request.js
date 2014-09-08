@@ -318,6 +318,15 @@ test('POST json array', function(next){
   });
 });
 
+test('GET hal-json', function(next){
+  request
+  .get('/hal-pets')
+  .end(function(res){
+    assert.eql(res.body, ['tobi', 'loki', 'jane']);
+    next();
+  });
+});
+
 test('POST json default', function(next){
   request
   .post('/pet')
